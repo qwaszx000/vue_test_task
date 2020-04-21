@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Vue js test task</title>
+	<meta charset="utf8">
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+<body>
+	<div id="main">
+		<table class="table table-hover">
+			<thead>
+				<tr>
+					<th>Action</th>
+					<th>Название</th>
+					<th>Количество</th>
+					<th>Цена</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr v-for="product in products" :id="product.id">
+					<td v-on:click="delElement">del</td>
+					<td><input class="border-0" v-model="product.name" v-on:blur="updateResult"/></td>
+					<td><input class="border-0" v-model="product.amount" v-on:blur="updateResult"/></td>
+					<td><input class="border-0" v-model="product.cost" v-on:blur="updateResult"/></td>
+				</tr>
+				<tr class="newProductRow">
+					<td><button class="btn" v-on:click="addNewProduct">+</button></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+				<tr class=resultRow>
+					<td></td>
+					<td>Итог:</td>
+					<td></td>
+					<td>{{ result }}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+<script src="./js/index.js"></script>
+</html>
