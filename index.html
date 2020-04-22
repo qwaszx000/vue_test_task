@@ -21,9 +21,9 @@
 			<tbody>
 				<tr v-for="product in products" :id="product.id">
 					<td v-on:click="delElement">del</td>
-					<td><input class="border-0" v-model="product.name" v-on:blur="updateResult"/></td>
-					<td><input class="border-0" v-model="product.amount" v-on:blur="updateResult"/></td>
-					<td><input class="border-0" v-model="product.cost" v-on:blur="updateResult"/></td>
+					<td><input class="border-0" v-model="product.name" v-on:input="updateResult"/></td>
+					<td><input class="border-0" v-model="product.amount" v-on:input="updateResult"/></td>
+					<td><input class="border-0" v-model="product.cost" v-on:input="updateResult"/></td>
 				</tr>
 				<tr class="newProductRow">
 					<td><button class="btn" v-on:click="addNewProduct">+</button></td>
